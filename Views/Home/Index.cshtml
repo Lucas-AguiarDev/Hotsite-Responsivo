@@ -1,0 +1,282 @@
+﻿@model Interesse
+@{
+    ViewData["Title"] = "Hotsite";
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-6 mt-5">
+            <div>
+                <h1 class="col-sm-12 text-center ">Iniciativa Saúde da Cidade</h1>
+                <p class="text-justify">
+                    Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                    legendos
+                    at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
+                </p>
+                <p class="text-justify">
+                    Texto sobre vida iniciativa: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                    legendos
+                    at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
+                </p>
+            </div>
+
+                @* FORMULÁRIO DE CONTATO *@
+
+            <div class="border p-3 text-justify mt-5" id="frm">
+                <h2 class="col-sm-12 text-center">Entre em contato:</h2>
+                <p class="col-sm-12 text-center">Nos mande uma mensagem e fique por dentro de nossos eventos</p>
+
+                <form class="col-sm-12" method="POST" id="frmCadastro">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label" asp-for="Nome">Nome:</label>
+                        <div class="col-sm-8">
+                            <input required class="form-control" asp-for="Nome" id="nome" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label" asp-for="Email">Email:</label>
+                        <div class="col-sm-8">
+                            <input required class="form-control" asp-for="Email" id="email" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label" asp-for="Mensagem">Mensagem <br> (opcional):</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" asp-for="Mensagem" id="mensagem"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="meuModal01">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">TUDO CERTO</h4>
+                                    <button type="button" class="close" data-dismiss="modal"><span
+                                            aria-hidden="true">&times;</span></button>
+                                </div>
+
+                                <div class="modal-body text-center" id="modalCad">
+                                    
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Enviar" class="btn btn-primary btn-lg" id="btnSubmit" data-toggle="modal"
+                        data-target="#meuModal01" />
+
+                </form>
+            </div>
+        </div>
+
+                @* MODAL AGENDA *@
+
+        <div class="col-sm-6 mt-5">
+            <div class="text-right container-fluid row">
+                <img class="img-fluid col-sm-12" src="/img/img01.jpg" alt="">
+            </div>
+
+            <div class="text-center mt-5 mb-3 row">
+                <div class="col-sm-4">
+                    <img class="mb-3" src="https://img.icons8.com/doodle/96/000000/calendar--v2.png" /> <br>
+
+                    <div class="modal fade" id="meuModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">AGENDA DE EVENTOS</h4>
+                                    <button type="button" class="close" data-dismiss="modal"><span
+                                            aria-hidden="true">&times;</span></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p class="text-justify">
+                                        25/12/21 - EVENTO 01
+                                        <br>
+                                        <br>
+                                        Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                        legendos
+                                        at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute
+                                        copiosae hendrerit.
+                                        <br>
+                                        <br>
+
+                                        25/12/21 - EVENTO 02
+                                        <br>
+                                        <br>
+                                        Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                        legendos
+                                        at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute
+                                        copiosae hendrerit.
+                                        <br>
+                                        <br>
+
+                                        25/12/21 - EVENTO 03
+                                        <br>
+                                        <br>
+                                        Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                        legendos
+                                        at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute
+                                        copiosae hendrerit.
+                                        <br>
+                                        <br>
+
+                                        25/12/21 - EVENTO 04
+                                        <br>
+                                        <br>
+                                        Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                        legendos
+                                        at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute
+                                        copiosae hendrerit.
+                                        <br>
+                                        <br>
+                                    </p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">FECHAR</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                        data-target="#meuModal">Agenda de eventos</button>
+
+                </div>
+
+                @* MODAL DICAS DE VIDA SAUDAVEL *@
+
+                <div class="col-sm-4">
+                    <img class="mb-3" src="https://img.icons8.com/doodle/96/000000/apple-tips.png" /> <br>
+
+                    <div class="modal fade" id="meuModal2">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">DICAS DE VIDA SAUDÁVEL</h4>
+                                    <button type="button" class="close" data-dismiss="modal"><span
+                                            aria-hidden="true">&times;</span></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p class="text-justify">
+                                        Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                        legendos
+                                        at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute
+                                        copiosae hendrerit.
+                                        <br>
+                                        <br>
+                                        Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                        legendos
+                                        at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute
+                                        copiosae hendrerit.
+                                        <br>
+                                        <br>
+                                        Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                        legendos
+                                        at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute
+                                        copiosae hendrerit.
+                                    </p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">FECHAR</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                        data-target="#meuModal2">Dicas de vida saudável</button>
+
+                </div>
+
+                @* MODAL APOIADORES *@
+
+                <div class="col-sm-4">
+                    <img class="mb-3" src="https://img.icons8.com/color/96/000000/giving.png" /> <br>
+
+                    <div class="modal fade" id="meuModal3">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">APOIADORES</h4>
+                                    <button type="button" class="close" data-dismiss="modal"><span
+                                            aria-hidden="true">&times;</span></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="container">
+
+                                        <div class="row mb-3">
+                                            <p class="text-justify col-sm-4 row">
+                                                <img class="img-fluid" src="/img/img01.jpg" alt="">
+                                            </p>
+                                            <p class="text-justify col-sm-8 ml-2 row">
+                                                <b> Empresa 01 </b><br>
+                                                Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                                legendos.
+                                            </p>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <p class="text-justify col-sm-4 row">
+                                                <img class="img-fluid" src="/img/img01.jpg" alt="">
+                                            </p>
+                                            <p class="text-justify col-sm-8 ml-2 row">
+                                                <b> Empresa 02 </b><br>
+                                                Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                                legendos.
+                                            </p>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <p class="text-justify col-sm-4 row">
+                                                <img class="img-fluid" src="/img/img01.jpg" alt="">
+                                            </p>
+                                            <p class="text-justify col-sm-8 ml-2 row">
+                                                <b> Empresa 03 </b><br>
+                                                Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                                legendos.
+                                            </p>
+                                        </div>
+
+                                        <div class="row">
+                                            <p class="text-justify col-sm-4 row">
+                                                <img class="img-fluid" src="/img/img01.jpg" alt="">
+                                            </p>
+                                            <p class="text-justify col-sm-8 ml-2 row">
+                                                <b> Empresa 04 </b><br>
+                                                Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                                                legendos.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">FECHAR</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                        data-target="#meuModal3">Empresas Apoiadoras</button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
